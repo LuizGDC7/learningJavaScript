@@ -1,0 +1,11 @@
+----------- ALERT -----------
+
+Abre uma caixinha de aviso pro usuário 
+
+----------- CONSOLE.LOG -----------
+
+O print do javascript
+
+----------- VARIÁVEIS -----------
+
+var -> o equivalente ao def do groovy e o auto de c++.
