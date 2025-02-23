@@ -9,3 +9,140 @@ O print do javascript
 ----------- VARIÁVEIS -----------
 
 var -> o equivalente ao def do groovy e o auto de c++.
+
+Parece que Javascript não tem tipagem. Ela é totalmente dinâmica, sem me permitir definir o tipo.
+
+undefined  -> não foi atribuído valor / tentou acessar valor ou indíce inexistente
+null -> objeto sem valor
+
+----------- COMPARAÇÃO -----------
+
+O de sempre, mas com adendos:
+
+A comparação em Javasctipt de certa forma é semântica, pois comparamos primeiro o conteúdo em si. Por exemplo:
+
+"65" == 65 é true, pois o conteúdo é igual. Precisamos levar isso em consideração.
+undefined == null -> retorna true
+
+
+== -> compara valor, mas não compara tipo
+=== -> compara valor E tipo
+!= -> compara se os valores são diferentes
+!== -> compara se os valores OU os tipos são diferentes
+
+Qualquer valor que não seja um dos seguintes é considerado verdadeiro:
+
+undefined, null, 0, NaN, ""
+
+----------- DOM / Document Object Model -----------
+
+Document Object Model, é a forma com que o HTML é organizado pelo navegador. O Javascript consegue manipular o DOM, e, por consequência, o HTML. O CSS é do mesmo modelo, mas só pra embelezamento.
+
+document.getById("id") -> pega um elemento html pelo id dele, mas não o conteúdo html
+
+.innerHTML -> pega o conteúdo html em si
+
+.getElementByClassName() -> pega todos os elementos por class
+
+.getElementByTagName() -> pega todos os elementos por tag html
+
+
+----------- BOM / Browser Object Model -----------
+
+O DOM mantém a ESTRUTURA do documento HTML dele. Ele trabalha com DOCUMENTOS.
+
+O BOM é a TELA, ela é exterior ao DOM, tudo que é exposto pelo navegador ao Javascript faz parte do BOM, não do DOM. Mas ainda preciso aprender mais.
+
+
+----------- FUNÇÕES -----------
+
+Funções: o mesmo de sempre, tenha cuidado por conta da falta de tipagem. Sintaxe:
+
+function nome_funcao(parametros){
+    return valores
+}
+
+A falta de tipagem atrapalha muito, não dá pra definir um tipo de retorno.
+
+----------- ARRAYS -----------
+
+O de sempre, mas a sintaxe além de mais simples, não tem tamanho estático:
+
+var lista = [conteudo]
+
+Temos os métodos de praxe pop, push
+Mas também o slice -> pega um sub array
+shift -> remove o primeiro elemento
+unshift -> adiciona um elemento na primeira posição
+
+----------- OBJETOS -----------
+
+São um pouco estranhos.
+
+As propriedades são dadas por chave - valor, como um map. Isso também vale para funções, é necessário associar a função à uma chave. Exemplo:
+
+var aluno = {
+    'nome': "Luiz",
+    'idade': 21,
+    'getNome': function(){
+        return this.nome
+    }
+}
+
+----------- FOR -----------
+
+O mesmo de sempre.
+
+O for semântico usa in.
+
+----------- WHILE, DO WHILE -----------
+
+O de sempre
+
+----------- Trabalhando com data e hora -----------
+
+classe Date funciona muito parecida com a de Java:
+
+getDate()	        Retorna o dia do mês (de 1 a 31)
+getDay()	        Retorna o dia da semana (de 0 - Domingo a 6 - Sábado)
+getFullYear()	    Retorna o ano
+getHours()	        Retorna a hora
+getMilliseconds()	Retorna o número de milisegundos (de 0 a 999)
+getMinutes()	    Retorna os minutos (de 0 a 59)
+getMonth()	        Retorna o mês (de 0 a 11)
+getSeconds()	    Retorna os segundos (de 0 a 59)
+getTime()	        Retorna o número de milisegundos desde o Epoch (01 Janeiro de 1970, 00:00:00)
+setTime()	        Cria uma data espeficifaca através de milisegundos desde o Epoch
+toLocaleString()	Cria uma data em formato string, usando as configurações locais
+
+Conversão de segundos para millisegundos
+
+1 segundo	        1.000
+1 minuto	        60.000
+1 hora	            3.600.000
+1 dia	            86.400.000
+1 ano (365 dias)	31.536.000.000
+
+----------- Trabalhando com tempo -----------
+
+Executar função depois de um tempo:
+
+setTimeOut (É uma função de callback):
+
+O método setTimeout aceita dois argumentos: uma função a ser executada após um determinado tempo e o tempo em milisegundos a esperar.
+
+Esta função passada como argumento é uma função callback, assunto que será visto mais adiante no curso. Basicamente, o que isso significa é que esta função só será invocada quando a função principal terminar de ser executada, ou seja, quando o tempo do método setTimeout terminar.
+
+window.setTimeout(função,tempo em milisegundos)
+out
+
+setInterval
+O método SetInterval é parecido com o setTimeout. Ele também aceita os mesmo dois argumentos, a diferença é que ele repete a execução do código indefinidamente, até que ele seja interrompido por outro método.           
+
+    var count = 0;
+    window.setInterval(function(){
+        console.log(count);
+        count++;
+    }, 1000);
+    
+                    
